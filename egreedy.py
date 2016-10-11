@@ -7,7 +7,7 @@ class eGreedy():
         self.sample_sums = np.zeros(n)
         self.n = n
         self.eps = .1
-        self.t = 0
+        self.t = self.n
         self.value = 0.0
 
     def update(self, arm, r):

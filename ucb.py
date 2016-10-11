@@ -1,5 +1,5 @@
 import numpy as np
-
+import random
 class UCB():
 
     def __init__(self, n):
@@ -32,8 +32,10 @@ class UCB():
         denominator = np.array(self.sample_counts)
         bound_term = np.sqrt(numerator / denominator)
         bounds = bound_term + means
-        
+        #args = np.argwhere(bounds == np.amax(bounds))
+        #return random.choice(args.flatten().tolist())
         return np.argmax(bounds)
+        
 
     def best_arm(self):
         means = self.sample_sums / self.sample_counts

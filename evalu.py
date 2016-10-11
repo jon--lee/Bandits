@@ -10,10 +10,10 @@ if __name__ == '__main__':
 
 
 
-    trials = 100
+    trials = 50
 
 
-    plays = 300
+    plays = 1000
     samples = 20
     
     rewards1 = np.zeros((trials, plays))
@@ -54,7 +54,7 @@ if __name__ == '__main__':
             for s in range(samples):
                 sample_r1 = env.pull(best_arm1)
                 sample_r2 = env.pull(best_arm2)
-                sample_r3 = env.pull(best_arm2)
+                sample_r3 = env.pull(best_arm3)
                 
 
                 rewards1[t, i] += sample_r1 / float(samples)
