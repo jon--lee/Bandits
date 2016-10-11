@@ -61,8 +61,8 @@ if __name__ == '__main__':
                 rewards2[t, i] += sample_r2 / float(samples)
                 rewards3[t, i] += sample_r3 / float(samples)
 
-        print best_arm1, best_arm2, best_arm3
-        print env.best_indices
+        print "eGreedy:", best_arm1, "UCB:", best_arm2, "Thompson:", best_arm3
+        print "Actual:", env.best_indices, "\n"
               
 
     average_reward1 = np.mean(rewards1, axis=0)

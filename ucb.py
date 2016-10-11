@@ -3,11 +3,11 @@ import numpy as np
 class UCB():
 
     def __init__(self, n):
-        self.sample_counts = np.zeros(n)
+        self.sample_counts = np.ones(n)
         self.sample_sums = np.zeros(n)
         self.n = n
         self.eps = .1
-        self.t = 0
+        self.t = self.n
         self.value = 0.0
 
     def update(self, arm, r):
@@ -28,7 +28,7 @@ class UCB():
         #        return i
         means = self.sample_sums / self.sample_counts
         
-        numerator = 2 * np.log([self.t]*self.n) 
+        numerator = 2 * np.log([self.t]*self.n)
         denominator = np.array(self.sample_counts)
         bound_term = np.sqrt(numerator / denominator)
         bounds = bound_term + means

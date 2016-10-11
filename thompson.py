@@ -3,7 +3,7 @@ import numpy as np
 class Thompson():
 
     def __init__(self, n):
-        self.sample_counts = np.zeros(n)
+        self.sample_counts = np.ones(n)
         self.sample_sums = np.zeros(n)
         self.n = n
         self.t = 0
